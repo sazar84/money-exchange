@@ -23,10 +23,13 @@ module.exports = function makeExchange(currency) {
     let change = {};
 
     coins.forEach((coinValue, coinName) => {
-        if (currency == coinValue) {
-            change[coinValue];
+        if (currency >= coinValue) {
+            if (coinValue !== 0) {
+            change[coinName] = 0;
+            }
+            change[coinName]++;
+            currency -=coinValue;
         }
-
     });
 
     return change;
