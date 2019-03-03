@@ -24,7 +24,7 @@ module.exports = function makeExchange(currency) {
 
     coins.forEach((coinValue, coinName) => {
 
-        if (currency >= coinValue) {
+        while (currency >= coinValue) {
             if (!change.hasOwnProperty(coinName)) {
                 change[coinName] = 0;
             }
